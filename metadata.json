@@ -1,0 +1,6 @@
+{
+  "name": "Plants",
+  "description": "AI-powered crop doctor, plant disease diagnosis, fertilizer calculator, and farming advisory inspired by Plantix.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
