@@ -1,4 +1,5 @@
 import { CropInfo, WeatherInfo, CommunityPost, DiagnosisData } from '../types/plants';
+import { CROP_DIAGNOSIS_CATALOG } from './cropDiagnosisCatalog';
 
 export const mockWeather: WeatherInfo = {
   location: 'Mandya & Mysore Agro Zone, KA',
@@ -463,7 +464,7 @@ export const sampleScans = [
     cropEn: 'Paddy (Rice)',
     cropKn: 'ಭತ್ತ',
     image: '/crops/paddy.jpg',
-    data: paddyBlastData,
+    data: CROP_DIAGNOSIS_CATALOG.paddy as unknown as DiagnosisData,
   },
   {
     id: 'sample-2',
@@ -472,25 +473,52 @@ export const sampleScans = [
     cropEn: 'Chilli',
     cropKn: 'ಮೆಣಸಿನಕಾಯಿ',
     image: '/crops/chilli.jpg',
-    data: chilliLeafCurlData,
+    data: CROP_DIAGNOSIS_CATALOG.chilli as unknown as DiagnosisData,
   },
   {
     id: 'sample-3',
+    nameEn: 'Cotton Bollworm & Leaf Spot',
+    nameKn: '3. ಹತ್ತಿ - ಕಾಯಿ ಕೊರೆಯುವ ಹುಳು',
+    cropEn: 'Cotton',
+    cropKn: 'ಹತ್ತಿ',
+    image: '/crops/cotton.jpg',
+    data: CROP_DIAGNOSIS_CATALOG.cotton as unknown as DiagnosisData,
+  },
+  {
+    id: 'sample-4',
+    nameEn: 'Ragi Blast & Neck Rot',
+    nameKn: '4. ರಾಗಿ - ಬೆಂಕಿ ರೋಗ & ಕುತ್ತಿಗೆ ಮುರಿತ',
+    cropEn: 'Finger Millet (Ragi)',
+    cropKn: 'ರಾಗಿ',
+    image: '/crops/ragi.jpg',
+    data: CROP_DIAGNOSIS_CATALOG.ragi as unknown as DiagnosisData,
+  },
+  {
+    id: 'sample-5',
+    nameEn: 'Arecanut Koleroga / Fruit Rot',
+    nameKn: '5. ಅಡಿಕೆ - ಕೊಳೆ ರೋಗ (ಮಹಾಳಿ)',
+    cropEn: 'Arecanut',
+    cropKn: 'ಅಡಿಕೆ',
+    image: '/crops/arecanut.jpg',
+    data: CROP_DIAGNOSIS_CATALOG.arecanut as unknown as DiagnosisData,
+  },
+  {
+    id: 'sample-6',
+    nameEn: 'Sugarcane Red Rot',
+    nameKn: '6. ಕಬ್ಬು - ಕೆಂಪು ಕೊಳೆ ರೋಗ',
+    cropEn: 'Sugarcane',
+    cropKn: 'ಕಬ್ಬು',
+    image: '/crops/sugarcane.jpg',
+    data: CROP_DIAGNOSIS_CATALOG.sugarcane as unknown as DiagnosisData,
+  },
+  {
+    id: 'sample-7',
     nameEn: 'Chickpea Wilt & Pod Borer',
     nameKn: '7. ಕಡಲೆ - ಸೊರಗು & ಕಾಯಿ ಕೊರೆಯುವ ಹುಳು',
     cropEn: 'Chickpea',
     cropKn: 'ಕಡಲೆ',
     image: '/crops/chickpea.jpg',
-    data: chickpeaWiltData,
-  },
-  {
-    id: 'sample-4',
-    nameEn: 'Tomato Early Blight',
-    nameKn: 'ಟೊಮ್ಯಾಟೊ - ಆರಂಭಿಕ ಅಂಗಮಾರಿ',
-    cropEn: 'Tomato',
-    cropKn: 'ಟೊಮ್ಯಾಟೊ',
-    image: 'https://images.unsplash.com/photo-1592841200221-a6898f307baa?auto=format&fit=crop&w=600&q=80',
-    data: tomatoBlightData,
+    data: CROP_DIAGNOSIS_CATALOG.chickpea as unknown as DiagnosisData,
   },
 ];
 
