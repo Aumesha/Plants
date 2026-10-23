@@ -1,0 +1,19 @@
+{
+	"appId": "com.plants.cropdoctor",
+	"appName": "Plants",
+	"webDir": "dist",
+	"bundledWebRuntime": false,
+	"server": {
+		"androidScheme": "https",
+		"cleartext": true
+	},
+	"android": {},
+	"plugins": {
+		"Camera": {
+			"permissions": [
+				"camera",
+				"photos"
+			]
+		}
+	}
+}
