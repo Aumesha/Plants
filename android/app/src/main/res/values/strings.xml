@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Plants</string>
+    <string name="title_activity_main">Plants</string>
+    <string name="package_name">com.plants.cropdoctor</string>
+    <string name="custom_url_scheme">com.plants.cropdoctor</string>
+</resources>
