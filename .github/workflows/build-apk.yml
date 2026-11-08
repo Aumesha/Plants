@@ -45,12 +45,21 @@ jobs:
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "platforms;android-34" "build-tools;34.0.0"
 
-      - name: Sync Capacitor Android
+      - name: Ensure Capacitor Android Platform Exists & Sync
         run: |
+          if [ ! -d "android" ] || [ ! -f "android/gradlew" ]; then
+            echo "android folder or gradlew not found. Adding Android platform via Capacitor..."
+            npx cap add android
+          else
+            echo "Existing android folder detected."
+          fi
+          echo "Syncing web assets to Capacitor Android..."
           npx cap sync android
 
       - name: Make gradlew executable
-        run: chmod +x android/gradlew
+        run: |
+          ls -la android/
+          chmod +x android/gradlew
 
       - name: Build Android Debug APK with Gradle
         run: |
