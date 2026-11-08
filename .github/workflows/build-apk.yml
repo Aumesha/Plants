@@ -45,13 +45,19 @@ jobs:
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "platforms;android-34" "build-tools;34.0.0"
 
-      - name: Ensure Capacitor Android Platform Exists & Sync
+      - name: Prepare Capacitor Android Platform
         run: |
-          if [ ! -d "android" ] || [ ! -f "android/gradlew" ]; then
-            echo "android folder or gradlew not found. Adding Android platform via Capacitor..."
-            npx cap add android
+          if [ -d "android" ]; then
+            if [ ! -f "android/gradlew" ]; then
+              echo "android folder exists but gradlew is missing; reinitializing android platform..."
+              rm -rf android
+              npx cap add android
+            else
+              echo "Android platform and gradlew exist."
+            fi
           else
-            echo "Existing android folder detected."
+            echo "android folder not found; adding Android platform..."
+            npx cap add android
           fi
           echo "Syncing web assets to Capacitor Android..."
           npx cap sync android
